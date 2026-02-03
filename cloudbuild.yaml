@@ -1,5 +1,5 @@
 steps:
-  # Bước 1: Cài đặt các thư viện (ví dụ cho Node.js hoặc R)
+  # Bước 1: Cài đặt các thư viện
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
 
@@ -14,3 +14,7 @@ steps:
 # Lưu trữ kết quả build vào kho lưu trữ
 images:
   - 'gcr.io/project-73ab5c94-4f5c-4078-848/xemxongdat'
+
+# ĐOẠN QUAN TRỌNG ĐỂ SỬA LỖI:
+options:
+  logging: CLOUD_LOGGING_ONLY
