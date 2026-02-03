@@ -1,0 +1,16 @@
+steps:
+  # Bước 1: Cài đặt các thư viện (ví dụ cho Node.js hoặc R)
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  # Bước 2: Chạy kiểm tra code (Test)
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['test']
+
+  # Bước 3: Đóng gói thành Docker Image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/project-73ab5c94-4f5c-4078-848/xemxongdat', '.']
+
+# Lưu trữ kết quả build vào kho lưu trữ
+images:
+  - 'gcr.io/project-73ab5c94-4f5c-4078-848/xemxongdat'
